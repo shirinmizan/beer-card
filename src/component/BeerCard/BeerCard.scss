@@ -1,0 +1,27 @@
+@use "../../assets/sass/_variables.scss" as *;
+
+.beer-data {
+    width: 20vw;
+    height: auto;
+    border: 2px solid $color-black;
+    &__name {
+        font-size: 20px;
+    }
+    &__description {
+        font-size: 12px;
+        background-color: lightgray;
+        border-radius: 3px;
+    }
+    &__image {
+        display: absolute;
+        opacity: 1;
+        width: auto;
+        height: 150px;
+        margin: 10px;
+        flex: auto;
+        flex-shrink: 0;
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px rgba($color-black, 0.25);
+    }
+    
+}

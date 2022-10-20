@@ -1,0 +1,9 @@
+@use "../../assets/sass/_variables.scss" as *;
+
+.search-box__input{
+  margin: 20px;
+  width: 85%;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+}

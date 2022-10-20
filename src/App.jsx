@@ -1,18 +1,17 @@
 import React from 'react'
-import "./App.scss";
-import BeerCard from './component/BeerCard/BeerCard';
-import beers from './data/beers';
+import './App.scss';
+import Home from './container/Home/Home';
 
 
 const App = () => {
 
-  
-
   return (
-    <div>
-      <BeerCard imageArr={beers}/>
+    <div className="App">
+        <h1>Beer Beer</h1>
+        <Home className="home" />
+
     </div>
-  )
-}
+  );
+};
 
 export default App
