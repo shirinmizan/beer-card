@@ -1,4 +1,5 @@
 import "./SearchBox.scss";
+import React from "react";
 
 const SearchBox = (props) => {
   const { searchTerm, handleInput } = props;
@@ -10,7 +11,7 @@ const SearchBox = (props) => {
         type="text"
         value={searchTerm}
         onInput={handleInput}
-        placeholder="Search beer name..."
+        placeholder="Search"
         className="search-box__input"
       />
     </form>

@@ -9,7 +9,6 @@ const Filter = (props) => {
       <input
         className="filter-checkbox__input"
         type="checkbox"
-        checked={value}
         onChange={(event) => onChange(filterId)}
       />
       {label}

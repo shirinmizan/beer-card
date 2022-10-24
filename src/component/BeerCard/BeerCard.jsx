@@ -1,7 +1,7 @@
 import React from 'react';
 import './BeerCard.scss';
 
-const BeerCard = () => {
+const BeerCard = (props) => {
   const { image, name, tagline, description } = props;
   return (
     <div className='beer-data'>

@@ -3,19 +3,32 @@ import Filter from '../Filter/Filter';
 import './FilterList.scss'
 
 const FilterList = (props) => {
-    const { filtersArr, toggleCheckedFilter } = props;
+    const { filterByABV, filterByPH } = props;
 
-    const filtersJSX = filtersArr.map((filter) => (
-        <Filter
-            label={filter.text}
-            value={filter.checked}
-            onChange={toggleCheckedFilter}
-            key={filter.id}
-        />
-    ));
-    console.log(filtersJSX)
     return (
-        <div className="filter-list">{filtersJSX}</div>
+        <div className="filter-list">
+            <div className='filter=list__filter'>
+                <input 
+                    onClick={filterByABV} 
+                    type="checkbox"
+                    id="abv"
+                    name="abv"/>
+                <label
+                    htmlFor="abv">High Alcohol (ABV great than 6%)</label>
+
+                <div className="filter-list__filter">
+                    <input 
+                        onClick={filterByPH}
+                        type="checkbox"
+                        id="ph"
+                        name="ph"/>
+                    <label htmlFor="ph">High Acidity (pH lower than 4)</label>
+                </div>
+               
+            </div> 
+
+
+        </div>
     );
 }
 
