@@ -1,9 +1,0 @@
-@use "../../assets/sass/_variables.scss" as *;
-
-@mixin mobile {
-    @media (max-width: $breakpoint-mobile) { @content; }
-}
-
-@mixin tablet {
-    @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) { @content; }
-}

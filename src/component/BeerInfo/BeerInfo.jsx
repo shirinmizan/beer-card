@@ -11,21 +11,21 @@ const BeerInfo = (props) =>{
         return beer.id == beerId;
     })
 
-    const singleBeer = beersArray[0];
+    const beerOne = beersArray[0];
 
     return (
         <div className="beer-page">
             <Link to="/" className="back-home">HomePage</Link>
 
             <div className="beer-info">
-                <img src={singleBeer.image_url} className="beer-info__img" alt="beer" />
+                <img src={beerOne.image_url} className="beer-info__img" alt="beer" />
 
                 <div className="beer-info__column">
-                    <h2 className="beer-info__title">{singleBeer.name}</h2>
-                    <p><b>Brewed in:</b> {singleBeer.first_brewed}</p>
-                    <p><b>Yeast:</b> {singleBeer.ingredients.yeast}</p>
-                    <p className="beer-info__description"><em>{singleBeer.description}</em></p>
-                    <table className="beer-info__table" border="1" cellpadding="10">
+                    <h2 className="beer-info__title">{beerOne.name}</h2>
+                    <p><b>Brewed in:</b> {beerOne.first_brewed}</p>
+                    <p><b>Yeast:</b> {beerOne.ingredients.yeast}</p>
+                    <p className="beer-info__description"><em>{beerOne.description}</em></p>
+                    <table className="beer-info__table" border="1" cellPadding="10">
                         <tbody>
                             <tr>
                                 <td><b>PH</b></td>
@@ -35,16 +35,16 @@ const BeerInfo = (props) =>{
                                 <td><b>SRM</b></td>
                             </tr>
                             <tr>
-                                <td>{singleBeer.ph}</td>
-                                <td>{singleBeer.abv}</td>
-                                <td>{singleBeer.ibu}</td>
-                                <td>{singleBeer.ebc}</td>
-                                <td>{singleBeer.srm}</td>
+                                <td>{beerOne.ph}</td>
+                                <td>{beerOne.abv}</td>
+                                <td>{beerOne.ibu}</td>
+                                <td>{beerOne.ebc}</td>
+                                <td>{beerOne.srm}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p><b>Food Pairing:</b> {singleBeer.food_pairing}</p>
-                    <p><b>Tips:</b> {singleBeer.brewers_tips}</p>
+                    <p><b>Food Pairing:</b> {beerOne.food_pairing}</p>
+                    <p><b>Tips:</b> {beerOne.brewers_tips}</p>
                 </div>
             </div>
         </div>

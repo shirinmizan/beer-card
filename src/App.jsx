@@ -7,15 +7,13 @@ import SearchBox from './component/SearchBox/SearchBox';
 import BeerInfo from './component/BeerInfo/BeerInfo';
 import NavBar from './component/NavBar/NavBar';
 
-// import Home from './container/Home/Home';
-
-
 const App = () => {
 
   const [beersArr, setBeersArr] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [ph, setPh] = useState(false)
   const [abv, setAbv] = useState(false)
+  const [classic, setClassic] = useState(false)
 
   useEffect(() => {
     fetch('https://api.punkapi.com/v2/beers?per_page=80')
@@ -32,6 +30,9 @@ const App = () => {
 
   const filterByABV = () => {
     setAbv(!abv)
+  }
+  const filterByClassic = () =>{
+    setClassic(!classic);
   }
 
     const handleInput = event => {
@@ -53,6 +54,10 @@ const App = () => {
     if (ph) {
       beerHasMatched = beerHasMatched && result.ph < 4;
     }
+
+    if(classic){
+      beerHasMatched = beerHasMatched && result.first_brewed.slice(-4) < 2010;
+    }
   
     return beerHasMatched;
   });
@@ -70,8 +75,11 @@ const App = () => {
            
             <Route path="/"
                 element= {<><BeerCardList beersArray={filterResults}/>
-                           <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
-                          <FilterList filterByABV={filterByABV} filterByPH={filterByPH}/></>
+                        <div className='navbar'>
+                         <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
+                         <FilterList filterByABV={filterByABV} filterByPH={filterByPH} 
+                         filterByClassic={filterByClassic}/>
+                         </div></>
                           }
             />
           </Routes>
@@ -82,6 +90,5 @@ const App = () => {
       </Router>
     
   );
-};
-
-export default App
+}
+export default App;

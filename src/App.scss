@@ -1,9 +1,27 @@
 @use "./assets/sass/_variables.scss" as *;
 
 .App {
-  text-align: center;
-  .Mainpage {
+  // text-align: center;
+  // .Mainpage {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+
+  
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    text-align: center;
+    width: 95vw;
+    height: 90vh;
+    // border: 2px solid $color-black;
+
+   
+      .navbar {
+        text-align: center;
+        width: 25%;
+        height: 81vh;
+        margin: 15px;
+        border: 2px solid $color-black;
+    }
   }
-}
+
